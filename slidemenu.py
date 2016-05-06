@@ -336,7 +336,7 @@ if __name__ == '__main__':
                      cursor_img = image.load('mouse.png'),
                      hotspot    = (38,15))
 
-        if resp[0] == "play": 
+        if resp[0] == "play":
             pygame.init()
             SCREENWIDTH=800
             SCREENHEIGHT=600
@@ -352,12 +352,12 @@ if __name__ == '__main__':
             pygame.time.set_timer(USEREVENT+1,80)
 
             start_time = pygame.time.get_ticks()   # Time in milliseconds
-            stop_after = 15* 1000  
-            
-            pygame.mixer.init()
-            pygame.mixer.music.load('sejourn.mp3')
-            pygame.mixer.music.play(-1)
-            sound=pygame.mixer.music.load(filename)
+            stop_after = 15* 1000
+
+            #pygame.mixer.init()
+            #pygame.mixer.music.load('sejourn.mp3')
+            #pygame.mixer.music.play(-1)
+            #sound=pygame.mixer.music.load(filename)
             end_it=False
             while end_it==False:
                 screen.fill((0,0,0))
@@ -367,31 +367,31 @@ if __name__ == '__main__':
                     if event.type==MOUSEBUTTONDOWN:
                         end_it=True
 
-                
- 
+
+
                 screen.blit(lable,(200,200))
                 pygame.display.flip()
                 time=0
 
             while True:
                # print(total_frames)
-                
+
                 total=(classes.total_score)
                 #print(time)
 
                 current_time = pygame.time.get_ticks()
                 tem=current_time/1000
 
-                if (current_time - start_time) >= stop_after:
-                    process.end_game(total)
-                    
-    
-                        
+                #if (current_time - start_time) >= stop_after:
+                   # process.end_game(total)
 
 
-                    
 
-                
+
+
+
+
+
                 screen.blit(background,(0,0))
                 myfont=pygame.font.SysFont("monospace",30)
                 lable=myfont.render("Time "+str(tem),1,(255,255,0))
@@ -408,16 +408,16 @@ if __name__ == '__main__':
                 classes.Pro.List.draw(screen)
                 clock.tick(FPS)
                 pygame.display.flip()
-                
-                
+
+
 
 
 #clr=(122,23,41)
 #img_bug=pygame.image.load("index.png")
 #i=0
 
-            
-                
+
+
 
   #  i+=1
    # if i>255:
@@ -426,7 +426,7 @@ if __name__ == '__main__':
    # screen.fill((160,i,35))
     #pygame.draw.line(screen,clr,(0,0),(640,360),5)
     #screen.blit(img_bug,(200,200))
-                
+
             print(resp)
             quit()
         elif resp[0]=='quit':

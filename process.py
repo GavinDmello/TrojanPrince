@@ -7,7 +7,7 @@ SCREENHEIGHT=600
 screen=pygame.display.set_mode((SCREENWIDTH,SCREENHEIGHT),0 ,32)
 def end_game(total):
     if total<30:
-        
+
         screen.fill((0,0,0))
         myfont=pygame.font.SysFont("monospace",15)
         lable=myfont.render("Score: "+str(total)+"You lose, Try harder the next :)",1,(255,255,0))
@@ -40,14 +40,14 @@ def process(bug,FPS,total_frames):
         classes.Hero_space.going_right=True
         bug.image=pygame.image.load('images/hero_space.png').convert_alpha()
         bug.velx=-10
-        
-        
-        
+
+
+
     elif keys[pygame.K_RIGHT]:
         classes.Hero_space.going_right=True
         bug.image=pygame.image.load('images/hero_space.png').convert_alpha()
         bug.velx=+10
-        
+
     elif keys[pygame.K_w]:
     	bug.jumping=True
 
@@ -55,16 +55,16 @@ def process(bug,FPS,total_frames):
     else:
         bug.velx=0
     if keys[pygame.K_SPACE]:
-        
+
         p=classes.Pro(bug.rect.x,bug.rect.y,41,31,"images/projectiles/bullet1.png")
-        pygame.mixer.music.play(0)
+        #pygame.mixer.music.play(0)
         if classes.Hero_space.going_right:
             p.velx=8
-            
+
         else :
             p.image=pygame.transform.flip(p.image,True,False)
             p.velx=-8
-            
+
     spawn(FPS,total_frames)
     collisions()
 def process1(bug,FPS,total_frames):
@@ -77,7 +77,7 @@ def process1(bug,FPS,total_frames):
         classes.Hero_space.going_right=True
         bug.image=pygame.image.load('images/newhero.png').convert_alpha()
         bug.velx=-5
-        
+
     elif keys[pygame.K_RIGHT]:
         classes.Hero_space.going_right=True
         bug.image=pygame.image.load('images/newhero.png').convert_alpha()
@@ -88,9 +88,9 @@ def process1(bug,FPS,total_frames):
     else:
         bug.velx=0
     if keys[pygame.K_SPACE]:
-        
+
         p=classes.Pro(bug.rect.x,bug.rect.y,41,31,"images/projectiles/bullet1.png")
-        pygame.mixer.music.play(0)
+        #pygame.mixer.music.play(0)
         if classes.Hero_space.going_right:
             p.velx=8
         else :
